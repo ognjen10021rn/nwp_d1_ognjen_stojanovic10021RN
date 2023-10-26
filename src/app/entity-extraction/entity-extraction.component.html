@@ -1,0 +1,41 @@
+<form (submit)="submit()">
+<div>
+  <label>Entiteti</label>
+  <input [(ngModel)]="txt" type="text" name="text" id="text" placeholder="Text">
+</div>
+<div>
+  <label>min_confidence</label>
+  <input #slider (input)="setSlider($event)" type="range" min="0" max="1" step="0.1">
+</div>
+<div>
+  <label>Include</label>
+    <div>
+      <input [(ngModel)]="image" value="image" type="checkbox" id="image" name="image">
+      <label for="image">Image</label>
+    </div>
+    <div>
+      <input [(ngModel)]="abstract" value="abstract" type="checkbox" id="abstract" name="abstract">
+      <label for="abstract">Abstract</label>
+    </div>
+    <div>
+      <input [(ngModel)]="categories" value="categories" type="checkbox" id="categories" name="categories">
+      <label for="categories">Categories</label>
+    </div>
+</div>
+  <button type="submit">Submit</button>
+</form>
+<div>
+
+  <div *ngFor="let post of posts?.annotations" class="mb-2">
+    <div class="card w-25">
+    <h3>{{post.title}}</h3>
+    <img *ngIf="image" [src]="post.image?.thumbnail" alt="">
+    <p *ngIf="abstract">{{post.abstract | textPipe}}</p>
+    <div *ngIf="categories">
+      <div *ngFor="let category of post.categories" class="mb-2">
+        <p>{{category}}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

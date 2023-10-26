@@ -1,0 +1,17 @@
+<form (submit)="submit()">
+  <div>
+    <label>Text 1</label>
+    <input [(ngModel)]="txt" type="text" name="text" placeholder="Text">
+  </div>
+  <div>
+    <label>Clean</label>
+    <input [(ngModel)]="clean" type="checkbox" name="clean" placeholder="Text">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div>
+  <div *ngFor="let lang of langDetection?.detectedLangs">
+    <h3>{{lang.confidence}}</h3>
+    <h4>{{lang.lang}}</h4>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<form (submit)="submit()">
+  <div>
+    <label>Text 1</label>
+    <input [(ngModel)]="txt" type="text" name="text" placeholder="Text">
+  </div>
+  <div>
+    <label>English</label>
+    <input [(ngModel)]="en" type="radio" name="button" value="en">
+    <label>Italian</label>
+    <input [(ngModel)]="it" type="radio" name="button" value="it">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div>
+  <h3>{{color}}</h3>
+  <h1>{{sentiment?.sentiment?.type}}</h1>
+  <div [style.color]="color">
+    <h3>{{sentiment?.sentiment?.score}}</h3>
+  </div>
+</div>

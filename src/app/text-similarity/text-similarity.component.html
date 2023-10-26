@@ -1,0 +1,15 @@
+<form (submit)="submit()" xmlns="http://www.w3.org/1999/html">
+  <div>
+    <label>Text 1</label>
+    <input [(ngModel)]="txt1" type="text" name="text" placeholder="Text">
+  </div>
+  <div>
+    <label>Text 2</label>
+    <input [(ngModel)]="txt2" type="text" name="text" placeholder="Text">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div>
+  <h3>{{result?.similarity}}</h3>
+</div>
+
